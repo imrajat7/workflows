@@ -29,5 +29,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - run: npm ci
+      # --- New ESLint Check Step ---
+      - name: Run ESLint Check
+        run: npm run lint
+      # -----------------------------
       - name: Build Application
         run: npm run build
